@@ -22,7 +22,7 @@ const addItemController = async (req, res) => {
 //update items
 const editItemController = async (req, res) => {
   try {
-    const {itemId}= req.body
+    const { itemId } = req.body;
     await itemModel.findOneAndUpdate({ _id: req.body.itemId }, req.body);
     res.status(201).send("Item updated");
   } catch (err) {
@@ -33,9 +33,8 @@ const editItemController = async (req, res) => {
 //delete items
 const deleteItemController = async (req, res) => {
   try {
-
-    const {itemId}= req.body
-    await itemModel.findOneAndDelete({ _id:itemId });
+    const { itemId } = req.body;
+    await itemModel.findOneAndDelete({ _id: itemId });
     res.status(200).send("Item deleted");
   } catch (err) {
     res.status(400).send("err", err);
@@ -43,4 +42,9 @@ const deleteItemController = async (req, res) => {
   }
 };
 
-module.exports = { getItemController, addItemController, editItemController, deleteItemController };
+module.exports = {
+  getItemController,
+  addItemController,
+  editItemController,
+  deleteItemController,
+};

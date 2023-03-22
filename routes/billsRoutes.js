@@ -1,6 +1,6 @@
 const express = require("express");
 const {
-  addBillsController,
+  addBillsController, getBillsController,
   
 } = require("../controllers/billsController");
 
@@ -10,6 +10,7 @@ const router = express.Router();
 //post method
 
 router.post("/add-bills", addBillsController);
+router.get("/get-bills", getBillsController);
 
 
 module.exports = router;

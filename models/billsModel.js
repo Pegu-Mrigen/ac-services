@@ -19,7 +19,7 @@ const billSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    Tax: {
+    tax: {
       type: Number,
       required: true,
     },
@@ -30,6 +30,10 @@ const billSchema = mongoose.Schema(
     cartItems: {
       type: Array,
       required: true,
+    },
+    date: {
+      type: Date,
+      default: Date.now(),
     },
   },
   { timeStamp: true }
